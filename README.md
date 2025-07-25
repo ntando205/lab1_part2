@@ -15,8 +15,8 @@ Go to the **Microsoft Store**, search for and install **"Ubuntu 24.04 LTS"** (or
 Open Ubuntu and run the following commands:
 
 ```bash
-sudo apt update
-sudo apt full-upgrade -y  # This might take a while
+sudo apt-get update
+sudo apt-get full-upgrade -y  # This might take a while
 ```
 
 ## 3. Install Docker
