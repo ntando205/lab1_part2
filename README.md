@@ -24,7 +24,6 @@ sudo apt-get full-upgrade -y  # This might take a while
 Copy and paste the following into your terminal:
 
 ```bash
-sudo apt-get update
 sudo apt-get install ca-certificates curl
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
