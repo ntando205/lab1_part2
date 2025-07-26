@@ -93,7 +93,9 @@ ping 8.8.8.8 #Google server
 nslookup mit.edu
 traceroute yahoo.com
 ```
->[!TIP] Thats It, You're Done!!
+:::v "Affirmation"
+Thats It, You're Done!!
+:::
 
 ## 8. Shutdown
 
