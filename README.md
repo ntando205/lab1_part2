@@ -44,7 +44,7 @@ Run the following command:
 docker import cEOS-lab-4.32.0F.tar.xz ceos:4.32.0F
 ```
 >[!IMPORTANT]
->Your file should look like this for nslookup and traceroute to work
+>Your ```srlceos01.clab.yml``` file should look like this for nslookup and traceroute to work
 >```yaml
 ># topology documentation: http://containerlab.dev/lab-examples/srl-ceos/
 >name: srlceos01
@@ -65,8 +65,9 @@ docker import cEOS-lab-4.32.0F.tar.xz ceos:4.32.0F
 >          - 1.1.1.1
 >
 >  links:
-    - endpoints: ["srl:ethernet-1/1", "ceos:eth1"]
+>    - endpoints: ["srl:ethernet-1/1", "ceos:eth1"]
 >```
+
 ## 5. Deploy the nodes
 
 Run the following command:
