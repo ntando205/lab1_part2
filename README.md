@@ -47,26 +47,26 @@ docker import cEOS-lab-4.32.0F.tar.xz ceos:4.32.0F
 >Your file should look like this for nslookup and traceroute to work
 >```yaml
 ># topology documentation: http://containerlab.dev/lab-examples/srl-ceos/
-name: srlceos01
-
-topology:
-  nodes:
-    srl:
-      kind: nokia_srlinux
-      image: ghcr.io/nokia/srlinux:24.10
-      dns:
-        servers:
-          - 1.1.1.1
-    ceos:
-      kind: arista_ceos
-      image: ceos:4.32.0F
-      dns:
-        servers:
-          - 1.1.1.1
-
-  links:
+>name: srlceos01
+>
+>topology:
+>  nodes:
+>    srl:
+>      kind: nokia_srlinux
+>      image: ghcr.io/nokia/srlinux:24.10
+>      dns:
+>        servers:
+>          - 1.1.1.1
+>    ceos:
+>      kind: arista_ceos
+>      image: ceos:4.32.0F
+>      dns:
+>        servers:
+>          - 1.1.1.1
+>
+>  links:
     - endpoints: ["srl:ethernet-1/1", "ceos:eth1"]
-    ```
+>```
 ## 5. Deploy the nodes
 
 Run the following command:
@@ -92,7 +92,7 @@ ping 8.8.8.8 #Google server
 nslookup mit.edu
 traceroute yahoo.com
 ```
-> [!tip] Thats It, You're Done!!
+>[!tip] Thats It, You're Done!!
 
 ## 8. Shutdown
 
