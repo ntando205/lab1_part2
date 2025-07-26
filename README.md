@@ -44,7 +44,7 @@ curl -sL https://containerlab.dev/setup | sudo -E bash -s "all"
 >```
 ## 4. Import the ceos image to docker
 
-Run the following command:
+In your lab1 directory run the following command:
 
 ```bash
 docker import cEOS-lab-4.32.0F.tar.xz ceos:4.32.0F
