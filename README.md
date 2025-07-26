@@ -7,6 +7,12 @@ Open a PowerShell prompt **as an Administrator** and run:
 ```powershell
 wsl --install
 ```
+>[!NOTE]
+>Additional Windows features are required for wsl to work
+>-open the Control panel
+>-go to "turn windows features on or off"
+>-select "Windows subsystem for linux", "Virtual machine platform" and "windows Hypervisor platform"
+>-reboot
 
 ## 2. Install Ubuntu
 
@@ -43,30 +49,6 @@ Run the following command:
 ```bash
 docker import cEOS-lab-4.32.0F.tar.xz ceos:4.32.0F
 ```
->[!IMPORTANT]
->Your ```srlceos01.clab.yml``` file should look like this for nslookup and traceroute to work
->```yaml
-># topology documentation: http://containerlab.dev/lab-examples/srl-ceos/
->name: srlceos01
->
->topology:
->  nodes:
->    srl:
->      kind: nokia_srlinux
->      image: ghcr.io/nokia/srlinux:24.10
->      dns:
->        servers:
->          - 1.1.1.1
->    ceos:
->      kind: arista_ceos
->      image: ceos:4.32.0F
->      dns:
->        servers:
->          - 1.1.1.1
->
->  links:
->    - endpoints: ["srl:ethernet-1/1", "ceos:eth1"]
->```
 
 ## 5. Deploy the nodes
 
@@ -81,10 +63,27 @@ sudo containerlab deploy
 Run the command:
 
 ```bash
-docker exec -it clab-srlceos01-srl bash
+docker exec -it clab-srlceos01-ceos bash
 ```
 
-## 7. Test your connectiion
+## 7. Add DNS server
+
+Open dnsmasq config file
+```bash
+sudo nano /etc/dnsmasq.conf
+```
+add this line:
+
+```bash
+server=1.1.1.1
+```
+restart dnsmasq
+
+```bash
+sudo systemctl restart dnmasq
+```
+
+# 8. Test your connection
 
 While running wireshark, run these commands on the nodes:
 
